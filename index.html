@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8998 — Premium Essentials</title>
+    <meta name="description" content="8998 — Premium essentials masculinos. Algodón pima, diseño limpio, hecho en Colombia.">
+    <meta property="og:title" content="8998 — Premium Essentials">
+    <meta property="og:description" content="Básicos premium masculinos. Algodón pima, diseño limpio, hecho en Colombia.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --color-bg:#08090c;--color-bg-elevated:#0f1116;--color-bg-card:#13151b;
+            --color-surface:#1a1d25;--color-border:rgba(255,255,255,0.06);
+            --color-text-primary:#f0ede8;--color-text-secondary:rgba(240,237,232,0.55);
+            --color-text-tertiary:rgba(240,237,232,0.3);--color-accent:#c9b99a;
+            --color-accent-dim:rgba(201,185,154,0.15);--color-navy:#1a2744;
+            --color-white-product:#e8e6e1;--color-black-product:#1a1a1a;
+            --font-display:'Cormorant Garamond',Georgia,serif;
+            --font-body:'Outfit',-apple-system,sans-serif;
+            --ease-out:cubic-bezier(0.16,1,0.3,1);--ease-in-out:cubic-bezier(0.65,0,0.35,1)
+        }
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body{font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text-primary);font-weight:300;line-height:1.6;overflow-x:hidden}
+
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s var(--ease-out),padding 0.4s var(--ease-out)}
+        .nav.scrolled{background:rgba(8,9,12,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:1rem 3rem;border-bottom:1px solid var(--color-border)}
+        .nav__logo{font-family:var(--font-body);font-size:1.5rem;font-weight:500;letter-spacing:0.35em;color:var(--color-text-primary);text-decoration:none}
+        .nav__links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+        .nav__links a{font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-secondary);text-decoration:none;transition:color 0.3s}
+        .nav__links a:hover{color:var(--color-text-primary)}
+
+        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(26,39,68,0.2) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 70% 60%,rgba(201,185,154,0.04) 0%,transparent 60%);pointer-events:none}
+        .hero__number{font-family:var(--font-body);font-size:clamp(5rem,15vw,12rem);font-weight:200;letter-spacing:0.15em;line-height:0.95;color:var(--color-text-primary);margin-bottom:2rem;opacity:0;transform:translateY(30px);animation:fadeUp 1s var(--ease-out) 0.3s forwards}
+        .hero__tagline{font-family:var(--font-display);font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:300;font-style:italic;color:var(--color-text-secondary);letter-spacing:0.04em;margin-bottom:1rem;opacity:0;transform:translateY(20px);animation:fadeUp 1s var(--ease-out) 0.6s forwards}
+        .hero__sub{font-size:0.8rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-tertiary);opacity:0;transform:translateY(20px);animation:fadeUp 1s var(--ease-out) 0.9s forwards}
+        .hero__scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0;animation:fadeUp 1s var(--ease-out) 1.4s forwards}
+        .hero__scroll span{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-tertiary)}
+        .hero__scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--color-text-tertiary),transparent);animation:scrollPulse 2s ease-in-out infinite}
+
+        .section{padding:8rem 3rem;max-width:1400px;margin:0 auto}
+        .section__label{font-size:0.7rem;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:var(--color-accent);margin-bottom:1.5rem}
+        .section__title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.2;color:var(--color-text-primary);margin-bottom:1.5rem}
+        .section__text{font-size:1rem;font-weight:300;line-height:1.8;color:var(--color-text-secondary);max-width:560px}
+        .divider{width:100%;height:1px;background:var(--color-border);max-width:1400px;margin:0 auto}
+
+        .story{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+        .story__visual{position:relative;height:500px;display:flex;align-items:center;justify-content:center}
+        .story__number-accent{font-family:var(--font-body);font-size:6rem;font-weight:200;letter-spacing:0.1em;color:var(--color-text-primary);opacity:0.08;position:absolute}
+        .story__emblem{width:180px;height:180px;border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+        .story__emblem-inner{font-family:var(--font-body);font-size:2rem;font-weight:200;letter-spacing:0.2em;color:var(--color-text-secondary)}
+        .story__content{padding:2rem 0}
+        .story__quote{font-family:var(--font-display);font-size:1.4rem;font-weight:300;font-style:italic;color:var(--color-accent);line-height:1.6;margin-top:2rem;padding-left:1.5rem;border-left:1px solid rgba(201,185,154,0.3)}
+
+        .products{text-align:center}
+        .products__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+        .product-card{position:relative;aspect-ratio:3/4;background:var(--color-bg-card);border:1px solid var(--color-border);overflow:hidden;cursor:pointer;transition:border-color 0.4s var(--ease-out),transform 0.4s var(--ease-out)}
+        .product-card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-4px)}
+        .product-card__image{width:100%;height:75%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+        .product-card__color-preview{width:60%;height:70%;border-radius:4px;transition:transform 0.6s var(--ease-out)}
+        .product-card:hover .product-card__color-preview{transform:scale(1.05)}
+        .product-card__color-preview.navy{background:linear-gradient(145deg,#1a2744 0%,#0f1a30 50%,#1e2d4a 100%);box-shadow:0 20px 60px rgba(26,39,68,0.4)}
+        .product-card__color-preview.black{background:linear-gradient(145deg,#1a1a1a 0%,#0a0a0a 50%,#222 100%);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+        .product-card__color-preview.white{background:linear-gradient(145deg,#f0ede8 0%,#e0ddd6 50%,#ece9e3 100%);box-shadow:0 20px 60px rgba(240,237,232,0.1)}
+        .product-card__info{height:25%;padding:1.2rem 1.5rem;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--color-border)}
+        .product-card__name{font-size:0.8rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-primary);margin-bottom:0.3rem}
+        .product-card__detail{font-size:0.75rem;color:var(--color-text-tertiary);letter-spacing:0.05em}
+        .product-card__badge{position:absolute;top:1rem;left:1rem;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-accent);background:var(--color-accent-dim);padding:0.35rem 0.8rem;border-radius:2px}
+
+        .details{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-top:4rem}
+        .detail-item{padding:2.5rem;border:1px solid var(--color-border);background:var(--color-bg-elevated);transition:border-color 0.3s}
+        .detail-item:hover{border-color:rgba(255,255,255,0.1)}
+        .detail-item__icon{font-size:1.5rem;margin-bottom:1.5rem;display:block}
+        .detail-item__title{font-family:var(--font-display);font-size:1.3rem;font-weight:400;color:var(--color-text-primary);margin-bottom:0.8rem}
+        .detail-item__text{font-size:0.85rem;font-weight:300;line-height:1.7;color:var(--color-text-secondary)}
+
+        .notify{text-align:center;padding:10rem 3rem;position:relative}
+        .notify::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(26,39,68,0.15) 0%,transparent 70%);pointer-events:none}
+        .notify__title{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.15;color:var(--color-text-primary);margin-bottom:1.5rem;position:relative}
+        .notify__text{font-size:1rem;font-weight:300;color:var(--color-text-secondary);max-width:480px;margin:0 auto 3rem;line-height:1.7;position:relative}
+        .notify__form{display:flex;gap:0;max-width:480px;margin:0 auto;position:relative}
+        .notify__input{flex:1;padding:1rem 1.5rem;font-family:var(--font-body);font-size:0.85rem;font-weight:300;letter-spacing:0.03em;color:var(--color-text-primary);background:var(--color-bg-card);border:1px solid var(--color-border);border-right:none;outline:none;transition:border-color 0.3s}
+        .notify__input::placeholder{color:var(--color-text-tertiary)}
+        .notify__input:focus{border-color:rgba(201,185,154,0.3)}
+        .notify__btn{padding:1rem 2rem;font-family:var(--font-body);font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-bg);background:var(--color-text-primary);border:1px solid var(--color-text-primary);cursor:pointer;transition:background 0.3s,color 0.3s;white-space:nowrap}
+        .notify__btn:hover{background:transparent;color:var(--color-text-primary)}
+
+        .whatsapp-float{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:90;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,0.3);transition:transform 0.3s var(--ease-out),box-shadow 0.3s;text-decoration:none}
+        .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.4)}
+        .whatsapp-float svg{width:28px;height:28px;fill:white}
+
+        .footer{padding:4rem 3rem 3rem;border-top:1px solid var(--color-border);max-width:1400px;margin:0 auto}
+        .footer__top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4rem}
+        .footer__brand{font-family:var(--font-body);font-size:1.2rem;font-weight:500;letter-spacing:0.35em;color:var(--color-text-primary)}
+        .footer__brand-sub{font-size:0.75rem;font-weight:300;color:var(--color-text-tertiary);margin-top:0.5rem;letter-spacing:0.05em}
+        .footer__col h4{font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:1.2rem}
+        .footer__col a{display:block;font-size:0.85rem;font-weight:300;color:var(--color-text-tertiary);text-decoration:none;margin-bottom:0.7rem;transition:color 0.3s}
+        .footer__col a:hover{color:var(--color-text-primary)}
+        .footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--color-border)}
+        .footer__copy{font-size:0.75rem;color:var(--color-text-tertiary);font-weight:300}
+        .footer__socials{display:flex;gap:1.5rem}
+        .footer__socials a{color:var(--color-text-tertiary);text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;transition:color 0.3s}
+        .footer__socials a:hover{color:var(--color-text-primary)}
+
+        @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+        @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
+        .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s var(--ease-out),transform 0.8s var(--ease-out)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        @media(max-width:1024px){
+            .story{grid-template-columns:1fr;gap:3rem}.story__visual{height:300px}
+            .products__grid{grid-template-columns:repeat(2,1fr)}.details{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .nav{padding:1.2rem 1.5rem}.nav.scrolled{padding:0.8rem 1.5rem}.nav__links{display:none}
+            .section{padding:5rem 1.5rem}.hero{padding:4rem 1.5rem}
+            .products__grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;margin-top:3rem}
+            .notify{padding:6rem 1.5rem}.notify__form{flex-direction:column}
+            .notify__input{border-right:1px solid var(--color-border);border-bottom:none}
+            .footer__top{flex-direction:column;gap:2.5rem}
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav__logo">8998</a>
+        <ul class="nav__links">
+            <li><a href="#story">Historia</a></li>
+            <li><a href="#collection">Colección</a></li>
+            <li><a href="#craft">Detalle</a></li>
+            <li><a href="#notify">Acceso</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero__number">8998</div>
+        <p class="hero__tagline">Premium essentials para quienes prefieren la elegancia sin ruido</p>
+        <p class="hero__sub">Algodón Pima &nbsp;·&nbsp; Hecho en Colombia &nbsp;·&nbsp; Drop 01 próximamente</p>
+        <div class="hero__scroll"><span>Descubrir</span><div class="hero__scroll-line"></div></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="story">
+        <div class="story">
+            <div class="story__visual reveal">
+                <span class="story__number-accent" style="top:10%;left:5%">89</span>
+                <span class="story__number-accent" style="bottom:10%;right:10%">98</span>
+                <div class="story__emblem"><span class="story__emblem-inner">8998</span></div>
+            </div>
+            <div class="story__content reveal">
+                <p class="section__label">La Historia</p>
+                <h2 class="section__title">Nombrado por la mariposa<br>que lleva sus números</h2>
+                <p class="section__text">La Diaethria, conocida como la mariposa 88-89, lleva marcados en sus alas los números que le dan nombre a esta marca. Es nativa de Latinoamérica, discreta y precisa en su diseño natural.</p>
+                <p class="section__text" style="margin-top:1rem">8998 nace de una idea simple: querer algo que se vea premium, limpio y elegante sin pagar un precio ridículo. Ropa que no grita, pero que se nota. Básicos que se sienten como deben sentirse.</p>
+                <p class="story__quote">Que se vea fino, que se sienta bien, que no necesite explicación.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section products" id="collection">
+        <p class="section__label reveal">Drop 01</p>
+        <h2 class="section__title reveal" style="max-width:600px;margin-left:auto;margin-right:auto">Tres colores. Un corte. Cero exceso.</h2>
+        <p class="section__text reveal" style="margin:0 auto;text-align:center">Algodón pima. Corte slim. Detalle bordado. Cada camiseta hecha para que no necesites pensar qué ponerte.</p>
+        <div class="products__grid">
+            <div class="product-card reveal">
+                <span class="product-card__badge">Drop 01</span>
+                <div class="product-card__image"><div class="product-card__color-preview navy"></div></div>
+                <div class="product-card__info"><p class="product-card__name">Essential Tee — Navy</p><p class="product-card__detail">Algodón Pima · Slim Fit</p></div>
+            </div>
+            <div class="product-card reveal">
+                <span class="product-card__badge">Drop 01</span>
+                <div class="product-card__image"><div class="product-card__color-preview black"></div></div>
+                <div class="product-card__info"><p class="product-card__name">Essential Tee — Black</p><p class="product-card__detail">Algodón Pima · Slim Fit</p></div>
+            </div>
+            <div class="product-card reveal">
+                <span class="product-card__badge">Drop 01</span>
+                <div class="product-card__image"><div class="product-card__color-preview white"></div></div>
+                <div class="product-card__info"><p class="product-card__name">Essential Tee — White</p><p class="product-card__detail">Algodón Pima · Slim Fit</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="craft">
+        <div style="text-align:center;margin-bottom:1rem">
+            <p class="section__label reveal">El Detalle</p>
+            <h2 class="section__title reveal" style="max-width:600px;margin:0 auto">Lo que hace la diferencia no se ve. Se siente.</h2>
+        </div>
+        <div class="details">
+            <div class="detail-item reveal">
+                <span class="detail-item__icon">◎</span>
+                <h3 class="detail-item__title">Algodón Pima</h3>
+                <p class="detail-item__text">Fibra extralarga, suave al tacto, resistente al desgaste. La misma que usan las marcas que cobran tres veces más.</p>
+            </div>
+            <div class="detail-item reveal">
+                <span class="detail-item__icon">▢</span>
+                <h3 class="detail-item__title">Corte Slim Limpio</h3>
+                <p class="detail-item__text">Ni ajustado ni holgado. Un fit pensado para verse bien en comida, oficina, salida nocturna o fin de semana.</p>
+            </div>
+            <div class="detail-item reveal">
+                <span class="detail-item__icon">◆</span>
+                <h3 class="detail-item__title">Hecho en Colombia</h3>
+                <p class="detail-item__text">Producción local, control de calidad directo, sin intermediarios. Cada pieza revisada antes de salir.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="notify" id="notify">
+        <p class="section__label reveal" style="text-align:center">Acceso Anticipado</p>
+        <h2 class="notify__title reveal">Drop 01 está por llegar</h2>
+        <p class="notify__text reveal">Deja tu correo para acceso anticipado y precio especial de lanzamiento. Sin spam, solo lo que importa.</p>
+        <div class="notify__form reveal">
+            <input type="email" class="notify__input" placeholder="tu@correo.com" aria-label="Email">
+            <button class="notify__btn" onclick="handleNotify()">Notificarme</button>
+        </div>
+        <p id="notify-msg" style="font-size:0.8rem;color:var(--color-accent);margin-top:1rem;opacity:0;transition:opacity 0.4s;position:relative">Listo. Te avisaremos primero.</p>
+    </section>
+
+    <footer>
+        <div class="footer" style="max-width:1400px">
+            <div class="footer__top">
+                <div>
+                    <div class="footer__brand">8998</div>
+                    <p class="footer__brand-sub">Premium Essentials · Colombia</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Marca</h4>
+                    <a href="#story">Historia</a>
+                    <a href="#collection">Drop 01</a>
+                    <a href="#craft">Detalle</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Soporte</h4>
+                    <a href="https://wa.me/57XXXXXXXXXX" target="_blank">WhatsApp</a>
+                    <a href="mailto:hola@8998.co">hola@8998.co</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Legal</h4>
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Envíos y Devoluciones</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 8998. Todos los derechos reservados.</p>
+                <div class="footer__socials">
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        const nav=document.getElementById('nav');
+        window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+        const reveals=document.querySelectorAll('.reveal');
+        const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>{entry.target.classList.add('visible')},i*80);observer.unobserve(entry.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+        reveals.forEach(el=>observer.observe(el));
+        function handleNotify(){const input=document.querySelector('.notify__input');const msg=document.getElementById('notify-msg');if(input.value&&input.value.includes('@')){msg.style.opacity='1';input.value='';console.log('Email captured:',input.value)}}
+        document.querySelector('.notify__input').addEventListener('keypress',(e)=>{if(e.key==='Enter')handleNotify()});
+    </script>
+</body>
+</html>
