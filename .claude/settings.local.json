@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "postToolUse": [
+      {
+        "matcher": "Write",
+        "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | jq -r '.file_path // empty' 2>/dev/null); if [ -n \"$file\" ] && echo \"$file\" | grep -q '\\.html$'; then which npx >/dev/null 2>&1 && npx --yes html-validate \"$file\" 2>&1 || echo 'html-validate not available, skipping validation'; fi"
+      }
+    ]
+  }
+}
