@@ -157,6 +157,15 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 .footer__socials a{font-size:.72rem;letter-spacing:.12em;color:var(--muted);transition:color .3s}
 .footer__socials a:hover{color:var(--text)}
 
+/* ─── PROOF BAR ──────────────────────────── */
+.proof-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.4rem 2.5rem;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;background:var(--bg2)}
+.proof-bar__item{display:flex;align-items:center;gap:.9rem;padding:.4rem 2.8rem}
+.proof-bar__item+.proof-bar__item{border-left:1px solid var(--border)}
+.proof-bar__label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text)}
+.proof-bar__sub{font-size:.62rem;letter-spacing:.1em;color:var(--muted);margin-top:.15rem}
+.proof-bar__icon{font-family:var(--font-d);font-size:1.1rem;color:var(--accent);line-height:1}
+@media(max-width:768px){.proof-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:1rem 1.5rem;gap:0}.proof-bar__item{padding:.3rem 1.8rem;flex-shrink:0}}
+
 /* ─── FLOAT ───────────────────────────────── */
 .wa-float{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:150;box-shadow:0 4px 24px rgba(37,211,102,.3);transition:transform .3s var(--ease);text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
@@ -217,24 +226,24 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 <nav class="nav" id="nav">
   <a href="#" class="nav__logo">8998</a>
   <ul class="nav__links">
-    <li><a href="#collection">Colección</a></li>
-    <li><a href="#philosophy">Historia</a></li>
-    <li><a href="#materials">Materiales</a></li>
-    <li><a href="#access" class="nav__cta">Acceso</a></li>
+    <li><a href="#collection">Drop 01</a></li>
+    <li><a href="#philosophy">La Idea</a></li>
+    <li><a href="#materials">El Producto</a></li>
+    <li><a href="#access" class="nav__cta">Acceso Prioritario</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero__img" src="https://images.unsplash.com/photo-1562135291-7728cc647783?w=1600&q=85&fm=jpg&fit=crop" alt="8998 — Essential Tee, product photography" loading="eager" fetchpriority="high" width="1600" height="900">
+  <img class="hero__img" src="https://images.unsplash.com/photo-1562135291-7728cc647783?w=1600&q=85&fm=jpg&fit=crop" alt="8998 — Essential Tee Drop 01" loading="eager" fetchpriority="high" width="1600" height="900">
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__label">Drop 01 · Próximamente</p>
-    <h1 class="hero__title">8998<br><em>Essentials</em></h1>
-    <p class="hero__sub">Algodón Pima &nbsp;·&nbsp; Corte Limpio &nbsp;·&nbsp; Hecho en Colombia</p>
+    <h1 class="hero__title">Para el hombre<br>que prefiere<br><em>leer bien</em></h1>
+    <p class="hero__sub">Básicos premium hechos en Colombia. Algodón Pima, refined fit, presencia limpia — para sentirse en lugar sin tener que explicarlo.</p>
     <div class="hero__actions">
-      <a href="#collection" class="btn btn-primary">Ver Colección</a>
-      <a href="#access" class="btn btn-ghost">Acceso Anticipado</a>
+      <a href="#access" class="btn btn-primary">Acceso prioritario</a>
+      <a href="#collection" class="btn btn-ghost">Ver Drop 01</a>
     </div>
   </div>
   <div class="hero__scroll">
@@ -243,29 +252,50 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- DIVIDER -->
-<div class="divider"><div></div></div>
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar__item">
+    <span class="proof-bar__icon">◎</span>
+    <div><div class="proof-bar__label">Algodón Pima</div><div class="proof-bar__sub">Fibra extralarga peruano</div></div>
+  </div>
+  <div class="proof-bar__item">
+    <span class="proof-bar__icon">▢</span>
+    <div><div class="proof-bar__label">Refined Fit</div><div class="proof-bar__sub">Correcto en cualquier contexto</div></div>
+  </div>
+  <div class="proof-bar__item">
+    <img src="https://flagcdn.com/w40/co.png" alt="Colombia" loading="lazy" width="20" height="14" style="border-radius:2px;opacity:.7">
+    <div><div class="proof-bar__label">Hecho en Colombia</div><div class="proof-bar__sub">Producción local directa</div></div>
+  </div>
+  <div class="proof-bar__item">
+    <span class="proof-bar__icon">◆</span>
+    <div><div class="proof-bar__label">Bordado discreto</div><div class="proof-bar__sub">Sin logos visibles</div></div>
+  </div>
+  <div class="proof-bar__item">
+    <span class="proof-bar__icon">○</span>
+    <div><div class="proof-bar__label">180 g/m²</div><div class="proof-bar__sub">Peso y caída correcta</div></div>
+  </div>
+</div>
 
 <!-- COLECCIÓN -->
 <section class="section collection" id="collection">
   <div class="collection__header">
     <p class="label reveal">Drop 01</p>
-    <h2 class="h2 reveal reveal-delay-1">Tres colores.<br>Un solo corte.</h2>
-    <p class="reveal reveal-delay-2">Algodón pima peruano. Slim fit. Detalle bordado discreto. Sin ruido visual.</p>
+    <h2 class="h2 reveal reveal-delay-1">Tres colores que funcionan<br>en cualquier ambiente.</h2>
+    <p class="reveal reveal-delay-2">Algodón pima peruano, 180 g/m². Refined fit. Bordado discreto. Cero logos visibles. Para repetir sin que se sienta repetido.</p>
   </div>
   <div class="collection__grid">
 
     <div class="product-card reveal">
       <span class="product-card__badge">Drop 01</span>
       <div class="product-card__img-wrap">
-        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee Black — 8998, product en percha fondo oscuro" loading="lazy" width="600" height="900">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee Black — 8998" loading="lazy" width="600" height="900">
         <div class="product-card__overlay"></div>
         <div class="product-card__cta"><span>Próximamente</span></div>
       </div>
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — Black</p>
-          <p class="product-card__detail">Algodón Pima · Slim Fit</p>
+          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -274,14 +304,14 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
     <div class="product-card reveal reveal-delay-1">
       <span class="product-card__badge">Drop 01</span>
       <div class="product-card__img-wrap">
-        <img src="https://images.pexels.com/photos/5746087/pexels-photo-5746087.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee White — 8998, camiseta blanca doblada fondo oscuro" loading="lazy" width="600" height="900">
+        <img src="https://images.pexels.com/photos/5746087/pexels-photo-5746087.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee White — 8998" loading="lazy" width="600" height="900">
         <div class="product-card__overlay"></div>
         <div class="product-card__cta"><span>Próximamente</span></div>
       </div>
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — White</p>
-          <p class="product-card__detail">Algodón Pima · Slim Fit</p>
+          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -290,14 +320,14 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
     <div class="product-card reveal reveal-delay-2">
       <span class="product-card__badge">Drop 01</span>
       <div class="product-card__img-wrap">
-        <img src="https://images.unsplash.com/photo-1542219550-b1b13a6a29eb?w=600&h=800&q=80&fm=jpg&fit=crop" alt="Essential Tee Navy — 8998, camiseta oscura sobre tejido negro" loading="lazy" width="600" height="800">
+        <img src="https://images.unsplash.com/photo-1542219550-b1b13a6a29eb?w=600&h=800&q=80&fm=jpg&fit=crop" alt="Essential Tee Navy — 8998" loading="lazy" width="600" height="800">
         <div class="product-card__overlay"></div>
         <div class="product-card__cta"><span>Próximamente</span></div>
       </div>
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — Navy</p>
-          <p class="product-card__detail">Algodón Pima · Slim Fit</p>
+          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -308,24 +338,24 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 
 <div class="divider"><div></div></div>
 
-<!-- FILOSOFÍA -->
+<!-- LA IDEA -->
 <section id="philosophy">
   <div class="philosophy">
     <div class="philosophy__visual reveal">
-      <img src="https://images.pexels.com/photos/13795169/pexels-photo-13795169.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Vista aérea de campos verdes en Quindío, Colombia" loading="lazy" width="700" height="900">
+      <img src="https://images.pexels.com/photos/13795169/pexels-photo-13795169.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Colombia" loading="lazy" width="700" height="900">
       <div class="philosophy__visual-overlay"></div>
     </div>
     <div class="philosophy__content">
-      <p class="label reveal">La Historia</p>
-      <h2 class="h2 reveal reveal-delay-1">Nombrado por<br>la mariposa que<br>lleva sus números</h2>
-      <p class="reveal reveal-delay-2">La <em>Diaethria</em> —conocida como la mariposa 88-89— lleva marcados en sus alas los números que dan nombre a esta marca. Nativa de Latinoamérica, discreta y precisa en su diseño natural.</p>
-      <p class="reveal reveal-delay-2">8998 nace de una idea simple: crear algo que se vea premium, limpio y elegante sin el precio inflado. Ropa que no grita, pero que se nota. Básicos que se sienten como deben sentirse.</p>
-      <p class="philosophy__quote reveal reveal-delay-3">Que se vea fino, que se sienta bien,<br>que no necesite explicación.</p>
+      <p class="label reveal">La Idea</p>
+      <h2 class="h2 reveal reveal-delay-1">Pertenecer al ambiente<br>sin tener que<br>performarlo</h2>
+      <p class="reveal reveal-delay-2">8998 no trata de impresionar. Trata de dejar que el hombre se sienta naturalmente en su lugar — sin sobre-esforzarse, sin quedar visualmente corto, sin tener que pensar dos veces en lo que lleva puesto.</p>
+      <p class="reveal reveal-delay-2">Un básico bien construido no llama la atención por las razones equivocadas. Lee bien. Repite bien. Funciona en la comida del domingo, en la reunión del lunes, en la salida del viernes.</p>
+      <p class="philosophy__quote reveal reveal-delay-3">Que se note. Sin que nadie<br>sepa exactamente qué notó.</p>
       <div class="philosophy__origin reveal reveal-delay-3">
         <img src="https://flagcdn.com/w80/co.png" alt="Colombia" loading="lazy" width="36" height="24" style="border-radius:2px">
         <div class="philosophy__origin-text">
           <strong>Hecho en Colombia</strong>
-          Producción local · Control directo · Sin intermediarios
+          Producción local · Control de calidad directo · Sin intermediarios
         </div>
       </div>
     </div>
@@ -339,23 +369,23 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   <img class="materials__img" src="https://images.pexels.com/photos/4814074/pexels-photo-4814074.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Algodón Pima — textura de tela" loading="lazy" width="1600" height="600">
   <div class="materials__overlay"></div>
   <div class="materials__content">
-    <p class="label reveal" style="margin-bottom:1.2rem">El Detalle</p>
-    <h2 class="materials__title reveal reveal-delay-1">Lo que hace la diferencia<br>no se ve. Se siente.</h2>
+    <p class="label reveal" style="margin-bottom:1.2rem">El Producto</p>
+    <h2 class="materials__title reveal reveal-delay-1">Lo que hace la diferencia<br>no se anuncia. Se siente.</h2>
     <div class="materials__grid">
       <div class="materials__item reveal reveal-delay-1">
         <div class="materials__item-icon">◎</div>
-        <h3 class="materials__item-title">Algodón Pima</h3>
-        <p class="materials__item-text">Fibra extralarga, suave al tacto, resistente al desgaste. La misma que usan las marcas que cobran tres veces más.</p>
+        <h3 class="materials__item-title">Algodón Pima Peruano</h3>
+        <p class="materials__item-text">Fibra extralarga de 180 g/m². Suave al tacto desde el primer uso. Resistente al desgaste y al lavado. La misma fibra que usan marcas que cobran tres veces más.</p>
       </div>
       <div class="materials__item reveal reveal-delay-2">
         <div class="materials__item-icon">▢</div>
-        <h3 class="materials__item-title">Corte Slim Limpio</h3>
-        <p class="materials__item-text">Ni ajustado ni holgado. Un fit pensado para verse bien en comida, oficina, salida nocturna o fin de semana.</p>
+        <h3 class="materials__item-title">Refined Fit</h3>
+        <p class="materials__item-text">Ni ajustado ni holgado. Un fit pensado para leer bien en comida, reunión de trabajo, salida de noche o domingo casual. Correcto en cualquier contexto sin pensar en ello.</p>
       </div>
       <div class="materials__item reveal reveal-delay-3">
         <div class="materials__item-icon">◆</div>
-        <h3 class="materials__item-title">Hecho en Colombia</h3>
-        <p class="materials__item-text">Producción local, control de calidad directo. Cada pieza revisada antes de salir. Sin intermediarios.</p>
+        <h3 class="materials__item-title">Construcción</h3>
+        <p class="materials__item-text">Costuras reforzadas, cuello sin deformación. Bordado discreto sin logos visibles en el frente. Cada pieza revisada antes de salir. Producción local con control directo.</p>
       </div>
     </div>
   </div>
@@ -365,14 +395,14 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 
 <!-- ACCESO -->
 <section class="access" id="access">
-  <p class="access__eyebrow reveal">Acceso Anticipado</p>
-  <h2 class="access__title reveal reveal-delay-1">Drop 01<br>está por llegar</h2>
-  <p class="access__sub reveal reveal-delay-2">Deja tu correo para acceso anticipado y precio especial de lanzamiento. Sin spam — solo lo que importa.</p>
+  <p class="access__eyebrow reveal">Drop 01</p>
+  <h2 class="access__title reveal reveal-delay-1">Acceso prioritario<br>antes del lanzamiento</h2>
+  <p class="access__sub reveal reveal-delay-2">Sé el primero en conocer la fecha, los colores y los detalles del Drop 01. Acceso antes que nadie — sin spam, sin ruido.</p>
   <div class="access__form reveal reveal-delay-3">
     <input type="email" class="access__input" placeholder="tu@correo.com" aria-label="Email" id="notify-input">
-    <button class="access__btn" onclick="handleNotify()">Notificarme</button>
+    <button class="access__btn" onclick="handleNotify()">Quiero acceso</button>
   </div>
-  <p class="access__msg" id="notify-msg">Listo. Te avisaremos primero.</p>
+  <p class="access__msg" id="notify-msg">Listo. Serás el primero en saberlo.</p>
   <div class="access__social reveal">
     <span class="access__social-label">O síguenos en</span>
     <a href="https://instagram.com/8998.co" target="_blank" rel="noopener" class="access__social-link">
