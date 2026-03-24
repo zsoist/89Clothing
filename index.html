@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}
 
 /* ─── HERO ────────────────────────────────── */
 .hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
-.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:scale(1.04);animation:heroScale 8s var(--ease) forwards}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.04);animation:heroScale 8s var(--ease) forwards}
 @keyframes heroScale{to{transform:scale(1)}}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(7,8,11,.55) 0%,rgba(7,8,11,.2) 50%,rgba(7,8,11,.88) 100%)}
 .hero__content{position:relative;z-index:2;padding:0 2.5rem 6rem;max-width:700px}
@@ -78,7 +78,7 @@ a{color:inherit;text-decoration:none}
 .product-card{position:relative;background:var(--card);border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .4s var(--ease),transform .5s var(--ease)}
 .product-card:hover{border-color:var(--border2);transform:translateY(-6px)}
 .product-card__img-wrap{aspect-ratio:3/4;overflow:hidden;position:relative}
-.product-card__img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
+.product-card__img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center center;transition:transform .7s var(--ease)}
 .product-card:hover .product-card__img-wrap img{transform:scale(1.06)}
 .product-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,8,11,.7) 0%,transparent 50%);opacity:0;transition:opacity .4s}
 .product-card:hover .product-card__overlay{opacity:1}
@@ -93,7 +93,7 @@ a{color:inherit;text-decoration:none}
 /* ─── FILOSOFÍA ───────────────────────────── */
 .philosophy{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:600px}
 .philosophy__visual{position:relative;overflow:hidden}
-.philosophy__visual img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.philosophy__visual img{width:100%;height:100%;object-fit:cover;object-position:center center}
 .philosophy__visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,11,0) 0%,rgba(7,8,11,.3) 100%)}
 .philosophy__content{background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:6rem 5rem}
 .philosophy__content .label{margin-bottom:1.5rem}
@@ -146,6 +146,9 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 .footer__col h4{font-size:.67rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:1.3rem}
 .footer__col a{display:block;font-size:.83rem;font-weight:300;color:var(--muted);margin-bottom:.65rem;transition:color .3s}
 .footer__col a:hover{color:var(--text)}
+.link-soon{opacity:.48;cursor:default}
+.link-soon:hover{color:var(--muted)!important}
+.soon-tag{font-size:.58rem;color:var(--accent);opacity:.65;margin-left:.3rem}
 .footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border)}
 .footer__copy{font-size:.72rem;color:var(--muted)}
 .footer__socials{display:flex;gap:2rem}
@@ -178,8 +181,9 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   .section{padding:5rem 1.5rem}
   .collection__grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
   .access{padding:6rem 1.5rem}
-  .access__form{flex-direction:column}
-  .access__input{border-right:1px solid var(--border);border-bottom:none}
+  .access__form{flex-direction:column;gap:.6rem}
+  .access__input{border-right:1px solid var(--border)}
+  .access__btn{width:100%;justify-content:center}
   .footer__top{grid-template-columns:1fr;gap:2.5rem}
   footer{padding:4rem 1.5rem 2.5rem}
   .divider{padding:0 1.5rem}
@@ -189,16 +193,19 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   .nav{padding:.9rem 1.2rem}.nav.scrolled{padding:.75rem 1.2rem}
   .hero__content{padding:0 1.2rem 4rem}
   .hero__title{font-size:clamp(2.2rem,11.5vw,3.2rem)}
+  .hero__scroll{display:none}
   .section{padding:4rem 1.2rem}
   .product-card__info{padding:1rem 1.2rem}
   .footer__bottom{flex-direction:column;gap:.8rem;text-align:center}
   .footer__socials{justify-content:center}
   .btn{padding:.8rem 1.5rem;font-size:.68rem}
-  .access__form{gap:.5rem}
   .access__input,.access__btn{padding:.85rem 1.2rem}
   .hero__sub{font-size:.76rem;letter-spacing:.08em}
   .materials__grid{gap:1px}
   .materials__item{padding:2rem 1.5rem}
+  .collection__header .h2{font-size:clamp(1.7rem,8vw,2.2rem)}
+  .philosophy__content{padding:3rem 1.5rem}
+  .philosophy__quote{font-size:1.05rem}
 }
 </style>
 </head>
@@ -390,23 +397,23 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       </div>
       <div class="footer__col">
         <h4>Contacto</h4>
-        <a href="#" title="Próximamente">WhatsApp <span style="font-size:.62rem;color:var(--accent);opacity:.7">(próx.)</span></a>
+        <a href="#" class="link-soon" title="Próximamente">WhatsApp<span class="soon-tag">próx.</span></a>
         <a href="https://instagram.com/8998.co" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:hola@8998.co">hola@8998.co</a>
       </div>
       <div class="footer__col">
         <h4>Legal</h4>
-        <a href="#" style="pointer-events:none;opacity:.45">Términos <span style="font-size:.6rem">(próx.)</span></a>
-        <a href="#" style="pointer-events:none;opacity:.45">Privacidad <span style="font-size:.6rem">(próx.)</span></a>
-        <a href="#" style="pointer-events:none;opacity:.45">Envíos <span style="font-size:.6rem">(próx.)</span></a>
-        <a href="#" style="pointer-events:none;opacity:.45">Devoluciones <span style="font-size:.6rem">(próx.)</span></a>
+        <a href="#" class="link-soon">Términos<span class="soon-tag">próx.</span></a>
+        <a href="#" class="link-soon">Privacidad<span class="soon-tag">próx.</span></a>
+        <a href="#" class="link-soon">Envíos<span class="soon-tag">próx.</span></a>
+        <a href="#" class="link-soon">Devoluciones<span class="soon-tag">próx.</span></a>
       </div>
     </div>
     <div class="footer__bottom">
       <p class="footer__copy">© 2025 8998. Todos los derechos reservados.</p>
       <div class="footer__socials">
         <a href="https://instagram.com/8998.co" target="_blank">Instagram</a>
-        <a href="#" title="Próximamente">TikTok <span style="font-size:.62rem;color:var(--accent);opacity:.7">(próx.)</span></a>
+        <a href="#" class="link-soon" title="Próximamente">TikTok<span class="soon-tag">próx.</span></a>
       </div>
     </div>
   </div>
