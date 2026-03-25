@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>8998 — Premium Essentials</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2307080b'/><text y='.9em' font-size='52' font-family='Georgia,serif' fill='%23c9b99a' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>8</text></svg>">
 <meta name="description" content="8998 — Básicos masculinos premium. Algodón pima, corte limpio, hecho en Colombia.">
 <meta property="og:title" content="8998 — Premium Essentials">
 <meta property="og:description" content="Básicos premium masculinos. Algodón pima, diseño limpio, hecho en Colombia.">
@@ -184,9 +185,22 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   .materials__grid{grid-template-columns:1fr}
   .footer__top{grid-template-columns:1fr 1fr;gap:3rem}
 }
+/* ─── HAMBURGER ───────────────────────────── */
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:210}
+.nav__hamburger span{display:block;height:1px;background:var(--text);transition:all .3s var(--ease);transform-origin:center}
+.nav__hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav__hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav__mobile{display:none;position:fixed;inset:0;background:rgba(7,8,11,.97);backdrop-filter:blur(24px);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.nav__mobile.open{display:flex}
+.nav__mobile a{font-size:1.4rem;font-family:var(--font-d);font-weight:300;letter-spacing:.1em;color:var(--dim);transition:color .3s}
+.nav__mobile a:hover{color:var(--text)}
+.nav__mobile .nav__cta-mobile{font-size:.8rem;font-family:var(--font-b);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,185,154,.35);padding:.8rem 2rem;border-radius:2px;margin-top:1rem}
+
 @media(max-width:768px){
   .nav{padding:1.1rem 1.5rem}.nav.scrolled{padding:.85rem 1.5rem}
   .nav__links{display:none}
+  .nav__hamburger{display:flex}
   .hero__content{padding:0 1.5rem 5rem}
   .hero__title{font-size:clamp(2.8rem,13vw,5rem)}
   .section{padding:5rem 1.5rem}
@@ -231,7 +245,18 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
     <li><a href="#materials">El Producto</a></li>
     <li><a href="#access" class="nav__cta">Acceso Prioritario</a></li>
   </ul>
+  <button class="nav__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Navegación">
+  <a href="#collection" class="nav__mobile-link">Drop 01</a>
+  <a href="#philosophy" class="nav__mobile-link">La Idea</a>
+  <a href="#materials" class="nav__mobile-link">El Producto</a>
+  <a href="#access" class="nav__cta-mobile">Acceso Prioritario</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -295,7 +320,7 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — Black</p>
-          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
+          <p class="product-card__detail">Pima 180g · Negro tinta</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -311,7 +336,7 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — White</p>
-          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
+          <p class="product-card__detail">Pima 180g · Blanco óptico</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -327,7 +352,7 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       <div class="product-card__info">
         <div>
           <p class="product-card__name">Essential Tee — Navy</p>
-          <p class="product-card__detail">Algodón Pima · Refined Fit</p>
+          <p class="product-card__detail">Pima 180g · Azul marino</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -398,10 +423,13 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   <p class="access__eyebrow reveal">Drop 01</p>
   <h2 class="access__title reveal reveal-delay-1">Acceso prioritario<br>antes del lanzamiento</h2>
   <p class="access__sub reveal reveal-delay-2">Sé el primero en conocer la fecha, los colores y los detalles del Drop 01. Acceso antes que nadie — sin spam, sin ruido.</p>
-  <div class="access__form reveal reveal-delay-3">
-    <input type="email" class="access__input" placeholder="tu@correo.com" aria-label="Email" id="notify-input">
-    <button class="access__btn" onclick="handleNotify()">Quiero acceso</button>
-  </div>
+  <form class="access__form reveal reveal-delay-3" id="notify-form" action="https://formsubmit.co/hola@8998.co" method="POST">
+    <input type="hidden" name="_subject" value="8998 — Nuevo acceso prioritario">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+    <input type="email" name="email" class="access__input" placeholder="tu@correo.com" aria-label="Email" id="notify-input" required>
+    <button type="submit" class="access__btn">Quiero acceso</button>
+  </form>
   <p class="access__msg" id="notify-msg">Listo. Serás el primero en saberlo.</p>
   <div class="access__social reveal">
     <span class="access__social-label">O síguenos en</span>
@@ -422,14 +450,14 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       </div>
       <div class="footer__col">
         <h4>Marca</h4>
-        <a href="#collection">Colección</a>
-        <a href="#philosophy">Historia</a>
-        <a href="#materials">Materiales</a>
+        <a href="#collection">Drop 01</a>
+        <a href="#philosophy">La Idea</a>
+        <a href="#materials">El Producto</a>
         <a href="#access">Acceso</a>
       </div>
       <div class="footer__col">
         <h4>Contacto</h4>
-        <a href="#" class="link-soon" title="Próximamente">WhatsApp<span class="soon-tag">próx.</span></a>
+        <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20información%20sobre%208998" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://instagram.com/8998.co" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:hola@8998.co">hola@8998.co</a>
       </div>
@@ -451,8 +479,8 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   </div>
 </footer>
 
-<!-- WhatsApp flotante -->
-<a class="wa-float" href="#" aria-label="WhatsApp — Próximamente" title="WhatsApp próximamente">
+<!-- WhatsApp flotante — REEMPLAZAR NÚMERO: https://wa.me/57XXXXXXXXXX -->
+<a class="wa-float" href="https://wa.me/573000000000?text=Hola%2C%20quiero%20información%20sobre%208998" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -470,17 +498,26 @@ const observer=new IntersectionObserver((entries)=>{
 },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 reveals.forEach(el=>observer.observe(el));
 
-// Email capture
-function handleNotify(){
-  const input=document.getElementById('notify-input');
-  const msg=document.getElementById('notify-msg');
-  if(input.value&&input.value.includes('@')){
-    msg.style.opacity='1';
-    const v=input.value;input.value='';
-    console.log('Email captured:',v);
-  }
+// Mobile nav hamburger
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+function toggleMenu(open){
+  hamburger.classList.toggle('open',open);
+  mobileNav.classList.toggle('open',open);
+  hamburger.setAttribute('aria-expanded',open);
+  document.body.style.overflow=open?'hidden':'';
 }
-document.getElementById('notify-input').addEventListener('keypress',e=>{if(e.key==='Enter')handleNotify()});
+hamburger.addEventListener('click',()=>toggleMenu(!mobileNav.classList.contains('open')));
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+// Email form — show confirmation on submit
+const form=document.getElementById('notify-form');
+const msg=document.getElementById('notify-msg');
+if(form){
+  form.addEventListener('submit',()=>{
+    setTimeout(()=>{msg.style.opacity='1'},300);
+  });
+}
 </script>
 </body>
 </html>
