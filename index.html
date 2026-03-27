@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8998 — Premium Essentials</title>
+<title>8998 — Básicos bien hechos</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2307080b'/><text y='.9em' font-size='52' font-family='Georgia,serif' fill='%23c9b99a' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>8</text></svg>">
-<meta name="description" content="8998 — Básicos masculinos premium. Algodón pima, corte limpio, hecho en Colombia.">
-<meta property="og:title" content="8998 — Premium Essentials">
-<meta property="og:description" content="Básicos premium masculinos. Algodón pima, diseño limpio, hecho en Colombia.">
+<meta name="description" content="8998 — Camisetas bien hechas desde Colombia. Tela fresca, cuello firme, buen largo.">
+<meta property="og:title" content="8998 — Básicos bien hechos">
+<meta property="og:description" content="Una buena camiseta debería resolver más de una vez. Hecha en Colombia.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://images.unsplash.com/photo-1562135291-7728cc647783?w=1200&q=85&fm=jpg&fit=crop">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +47,9 @@ a{color:inherit;text-decoration:none}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(7,8,11,.55) 0%,rgba(7,8,11,.2) 50%,rgba(7,8,11,.88) 100%)}
 .hero__content{position:relative;z-index:2;padding:0 2.5rem 6rem;max-width:700px}
 .hero__label{font-size:.65rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;opacity:0;transform:translateY(16px);animation:fadeUp .9s var(--ease) .4s forwards}
-.hero__title{font-family:var(--font-d);font-size:clamp(3.5rem,9vw,7.5rem);font-weight:300;line-height:.95;letter-spacing:-.01em;margin-bottom:1.5rem;opacity:0;transform:translateY(24px);animation:fadeUp .9s var(--ease) .6s forwards}
+.hero__title{font-family:var(--font-d);font-size:clamp(3rem,8vw,6.5rem);font-weight:300;line-height:1.05;letter-spacing:-.01em;margin-bottom:1.5rem;opacity:0;transform:translateY(24px);animation:fadeUp .9s var(--ease) .6s forwards}
 .hero__title em{font-style:italic;color:var(--accent)}
-.hero__sub{font-size:.82rem;font-weight:300;letter-spacing:.12em;color:rgba(238,235,229,.7);margin-bottom:2.5rem;opacity:0;transform:translateY(16px);animation:fadeUp .9s var(--ease) .8s forwards}
+.hero__sub{font-size:.85rem;font-weight:300;line-height:1.8;color:rgba(238,235,229,.7);max-width:480px;margin-bottom:2.5rem;opacity:0;transform:translateY(16px);animation:fadeUp .9s var(--ease) .8s forwards}
 .hero__actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;opacity:0;transform:translateY(16px);animation:fadeUp .9s var(--ease) 1s forwards}
 .btn{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.2rem;border-radius:2px;transition:all .3s var(--ease);cursor:pointer;border:none;font-family:var(--font-b)}
 .btn-primary{background:var(--accent);color:var(--bg)}
@@ -74,10 +74,10 @@ a{color:inherit;text-decoration:none}
 
 /* ─── COLECCIÓN ───────────────────────────── */
 .collection{text-align:center}
-.collection__header{margin-bottom:4rem}
+.collection__header{margin-bottom:3rem}
 .collection__header .h2{margin:.8rem auto 1.2rem;max-width:500px}
 .collection__header p{font-size:.9rem;color:var(--dim);max-width:440px;margin:0 auto}
-.collection__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.collection__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .product-card{position:relative;background:var(--card);border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .4s var(--ease),transform .5s var(--ease)}
 .product-card:hover{border-color:var(--border2);transform:translateY(-6px)}
 .product-card__img-wrap{aspect-ratio:3/4;overflow:hidden;position:relative}
@@ -88,38 +88,18 @@ a{color:inherit;text-decoration:none}
 .product-card__badge{position:absolute;top:1rem;left:1rem;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:.3rem .8rem;border-radius:2px;backdrop-filter:blur(8px)}
 .product-card__info{padding:1.3rem 1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .product-card__name{font-size:.78rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
-.product-card__detail{font-size:.72rem;color:var(--muted)}
+.product-card__detail{font-size:.72rem;color:var(--muted);margin-top:.2rem}
 .product-card__cta{position:absolute;bottom:3.8rem;left:0;right:0;display:flex;justify-content:center;opacity:0;transform:translateY(8px);transition:all .4s var(--ease)}
 .product-card:hover .product-card__cta{opacity:1;transform:none}
 .product-card__cta span{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid rgba(201,185,154,.4);padding-bottom:2px}
 
-/* ─── FILOSOFÍA ───────────────────────────── */
-.philosophy{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:600px}
-.philosophy__visual{position:relative;overflow:hidden}
-.philosophy__visual img{width:100%;height:100%;object-fit:cover;object-position:center center}
-.philosophy__visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,11,0) 0%,rgba(7,8,11,.3) 100%)}
-.philosophy__content{background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:6rem 5rem}
-.philosophy__content .label{margin-bottom:1.5rem}
-.philosophy__content .h2{margin-bottom:2rem}
-.philosophy__content p{font-size:.95rem;color:var(--dim);line-height:1.9;max-width:420px}
-.philosophy__content p+p{margin-top:1.2rem}
-.philosophy__quote{font-family:var(--font-d);font-size:1.25rem;font-weight:300;font-style:italic;color:var(--accent);line-height:1.6;margin-top:2.5rem;padding-left:1.5rem;border-left:1px solid rgba(201,185,154,.3)}
-.philosophy__origin{display:flex;align-items:center;gap:.8rem;margin-top:2.5rem}
-.philosophy__origin img{border-radius:2px}
-.philosophy__origin-text{font-size:.75rem;color:var(--dim);letter-spacing:.05em}
-.philosophy__origin-text strong{display:block;color:var(--text);font-weight:400;letter-spacing:.12em;text-transform:uppercase;font-size:.68rem;margin-bottom:.2rem}
-
-/* ─── MATERIALES ──────────────────────────── */
-.materials{position:relative;overflow:hidden;min-height:500px;display:flex;align-items:center}
-.materials__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.materials__overlay{position:absolute;inset:0;background:rgba(7,8,11,.75)}
-.materials__content{position:relative;z-index:2;max-width:1340px;margin:0 auto;padding:7rem 2.5rem;width:100%}
-.materials__title{font-family:var(--font-d);font-size:clamp(1.5rem,3.5vw,2.6rem);font-weight:300;margin-bottom:3.5rem;max-width:560px}
-.materials__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.materials__item{background:rgba(13,14,18,.7);backdrop-filter:blur(10px);padding:2.5rem 2rem;border:1px solid rgba(255,255,255,.06)}
-.materials__item-icon{font-family:var(--font-d);font-size:2.2rem;font-weight:300;color:var(--accent);margin-bottom:1rem;line-height:1}
-.materials__item-title{font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text);margin-bottom:.7rem}
-.materials__item-text{font-size:.83rem;font-weight:300;color:var(--dim);line-height:1.75}
+/* ─── PROOF BAR (dentro de sección de producto) ─ */
+.proof-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.4rem 2.5rem;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;background:var(--bg2)}
+.proof-bar__item{display:flex;align-items:center;gap:.9rem;padding:.4rem 2.8rem}
+.proof-bar__item+.proof-bar__item{border-left:1px solid var(--border)}
+.proof-bar__label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text)}
+.proof-bar__icon{font-family:var(--font-d);font-size:1.1rem;color:var(--accent);line-height:1}
+@media(max-width:768px){.proof-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:1rem 1.5rem;gap:0}.proof-bar__item{padding:.3rem 1.8rem;flex-shrink:0}}
 
 /* ─── ACCESO ──────────────────────────────── */
 .access{text-align:center;padding:10rem 2.5rem;position:relative}
@@ -140,6 +120,30 @@ a{color:inherit;text-decoration:none}
 .access__social-link:hover{border-color:rgba(201,185,154,.4);color:var(--accent)}
 .access__social-link svg{width:14px;height:14px;fill:currentColor}
 
+/* ─── USO REAL ────────────────────────────── */
+.use-real{padding:8rem 2.5rem;max-width:1340px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.use-real__left{}
+.use-real__left .h2{margin-bottom:1.8rem}
+.use-real__left p{font-size:.95rem;color:var(--dim);line-height:1.9;max-width:420px}
+.use-real__list{list-style:none;display:flex;flex-direction:column;gap:0}
+.use-real__list li{padding:1.4rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--dim);line-height:1.7}
+.use-real__list li:first-child{border-top:1px solid var(--border)}
+.use-real__list strong{color:var(--text);font-weight:500;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+
+/* ─── IDEA BLOCK ──────────────────────────── */
+.idea-block{padding:8rem 2.5rem;max-width:800px;margin:0 auto;text-align:center}
+.idea-block .h2{margin-bottom:2rem}
+.idea-block p{font-size:.95rem;color:var(--dim);line-height:1.9}
+
+/* ─── CONFIANZA ───────────────────────────── */
+.trust-block{padding:8rem 2.5rem;max-width:1340px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.trust-block__left .h2{margin-bottom:1.8rem}
+.trust-block__left p{font-size:.95rem;color:var(--dim);line-height:1.9;max-width:420px}
+.trust-mini{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.trust-mini__item{background:var(--bg2);padding:1.5rem 1.8rem}
+.trust-mini__item span{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text);display:block}
+.trust-mini__item::before{content:'—';font-family:var(--font-d);font-size:.9rem;color:var(--accent);display:block;margin-bottom:.5rem}
+
 /* ─── FOOTER ──────────────────────────────── */
 footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 .footer__inner{max-width:1340px;margin:0 auto}
@@ -158,15 +162,6 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 .footer__socials a{font-size:.72rem;letter-spacing:.12em;color:var(--muted);transition:color .3s}
 .footer__socials a:hover{color:var(--text)}
 
-/* ─── PROOF BAR ──────────────────────────── */
-.proof-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.4rem 2.5rem;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;background:var(--bg2)}
-.proof-bar__item{display:flex;align-items:center;gap:.9rem;padding:.4rem 2.8rem}
-.proof-bar__item+.proof-bar__item{border-left:1px solid var(--border)}
-.proof-bar__label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text)}
-.proof-bar__sub{font-size:.62rem;letter-spacing:.1em;color:var(--muted);margin-top:.15rem}
-.proof-bar__icon{font-family:var(--font-d);font-size:1.1rem;color:var(--accent);line-height:1}
-@media(max-width:768px){.proof-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:1rem 1.5rem;gap:0}.proof-bar__item{padding:.3rem 1.8rem;flex-shrink:0}}
-
 /* ─── FLOAT ───────────────────────────────── */
 .wa-float{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:150;box-shadow:0 4px 24px rgba(37,211,102,.3);transition:transform .3s var(--ease);text-decoration:none}
 .wa-float:hover{transform:scale(1.1)}
@@ -176,15 +171,6 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:.8}}
 
-/* ─── RESPONSIVE ──────────────────────────── */
-@media(max-width:1024px){
-  .collection__grid{grid-template-columns:repeat(2,1fr)}
-  .philosophy{grid-template-columns:1fr}
-  .philosophy__visual{min-height:400px}
-  .philosophy__content{padding:4rem 2.5rem}
-  .materials__grid{grid-template-columns:1fr}
-  .footer__top{grid-template-columns:1fr 1fr;gap:3rem}
-}
 /* ─── HAMBURGER ───────────────────────────── */
 .nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;z-index:210}
 .nav__hamburger span{display:block;height:1px;background:var(--text);transition:all .3s var(--ease);transform-origin:center}
@@ -197,14 +183,24 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 .nav__mobile a:hover{color:var(--text)}
 .nav__mobile .nav__cta-mobile{font-size:.8rem;font-family:var(--font-b);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,185,154,.35);padding:.8rem 2rem;border-radius:2px;margin-top:1rem}
 
+/* ─── RESPONSIVE ──────────────────────────── */
+@media(max-width:1024px){
+  .collection__grid{grid-template-columns:repeat(2,1fr)}
+  .use-real{grid-template-columns:1fr;gap:4rem}
+  .trust-block{grid-template-columns:1fr;gap:4rem}
+  .footer__top{grid-template-columns:1fr 1fr;gap:3rem}
+}
 @media(max-width:768px){
   .nav{padding:1.1rem 1.5rem}.nav.scrolled{padding:.85rem 1.5rem}
   .nav__links{display:none}
   .nav__hamburger{display:flex}
   .hero__content{padding:0 1.5rem 5rem}
-  .hero__title{font-size:clamp(2.8rem,13vw,5rem)}
+  .hero__title{font-size:clamp(2.8rem,11vw,4.5rem)}
   .section{padding:5rem 1.5rem}
   .collection__grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .use-real{padding:5rem 1.5rem}
+  .idea-block{padding:5rem 1.5rem}
+  .trust-block{padding:5rem 1.5rem}
   .access{padding:6rem 1.5rem}
   .access__form{flex-direction:column;gap:.6rem}
   .access__input{border-right:1px solid var(--border)}
@@ -212,7 +208,7 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   .footer__top{grid-template-columns:1fr;gap:2.5rem}
   footer{padding:4rem 1.5rem 2.5rem}
   .divider{padding:0 1.5rem}
-  .materials__content{padding:5rem 1.5rem}
+  .trust-mini{grid-template-columns:1fr}
 }
 @media(max-width:400px){
   .nav{padding:.9rem 1.2rem}.nav.scrolled{padding:.75rem 1.2rem}
@@ -225,12 +221,8 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   .footer__socials{justify-content:center}
   .btn{padding:.8rem 1.5rem;font-size:.68rem}
   .access__input,.access__btn{padding:.85rem 1.2rem}
-  .hero__sub{font-size:.76rem;letter-spacing:.08em}
-  .materials__grid{gap:1px}
-  .materials__item{padding:2rem 1.5rem}
-  .collection__header .h2{font-size:clamp(1.7rem,8vw,2.2rem)}
-  .philosophy__content{padding:3rem 1.5rem}
-  .philosophy__quote{font-size:1.05rem}
+  .hero__sub{font-size:.8rem}
+  .trust-mini__item{padding:1.2rem 1.5rem}
 }
 </style>
 </head>
@@ -241,8 +233,8 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   <a href="#" class="nav__logo">8998</a>
   <ul class="nav__links">
     <li><a href="#collection">Drop 01</a></li>
-    <li><a href="#philosophy">La Idea</a></li>
-    <li><a href="#materials">El Producto</a></li>
+    <li><a href="#idea">La Idea</a></li>
+    <li><a href="#confianza">Colombia</a></li>
     <li><a href="#access" class="nav__cta">Acceso Prioritario</a></li>
   </ul>
   <button class="nav__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
@@ -253,22 +245,21 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 <!-- MOBILE NAV -->
 <div class="nav__mobile" id="mobileNav" role="dialog" aria-label="Navegación">
   <a href="#collection" class="nav__mobile-link">Drop 01</a>
-  <a href="#philosophy" class="nav__mobile-link">La Idea</a>
-  <a href="#materials" class="nav__mobile-link">El Producto</a>
+  <a href="#idea" class="nav__mobile-link">La Idea</a>
+  <a href="#confianza" class="nav__mobile-link">Colombia</a>
   <a href="#access" class="nav__cta-mobile">Acceso Prioritario</a>
 </div>
 
-<!-- HERO -->
+<!-- 1. HERO -->
 <section class="hero">
-  <img class="hero__img" src="https://images.unsplash.com/photo-1562135291-7728cc647783?w=1600&q=85&fm=jpg&fit=crop" alt="8998 — Essential Tee Drop 01" loading="eager" fetchpriority="high" width="1600" height="900">
+  <img class="hero__img" src="https://images.unsplash.com/photo-1562135291-7728cc647783?w=1600&q=85&fm=jpg&fit=crop" alt="8998 — Drop 01" loading="eager" fetchpriority="high" width="1600" height="900">
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__label">Drop 01 · Próximamente</p>
-    <h1 class="hero__title">Para el hombre<br>que prefiere<br><em>leer bien</em></h1>
-    <p class="hero__sub">Básicos premium hechos en Colombia. Algodón Pima, refined fit, presencia limpia — para sentirse en lugar sin tener que explicarlo.</p>
+    <h1 class="hero__title">Una buena camiseta debería resolver más de una vez.</h1>
+    <p class="hero__sub">Hecha para verse bien, sentirse bien y usarse seguido. Con tela fresca, cuello firme y un fit bien resuelto.</p>
     <div class="hero__actions">
       <a href="#access" class="btn btn-primary">Acceso prioritario</a>
-      <a href="#collection" class="btn btn-ghost">Ver Drop 01</a>
     </div>
   </div>
   <div class="hero__scroll">
@@ -277,50 +268,43 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   </div>
 </section>
 
-<!-- PROOF BAR -->
-<div class="proof-bar">
-  <div class="proof-bar__item">
-    <span class="proof-bar__icon">◎</span>
-    <div><div class="proof-bar__label">Algodón Pima</div><div class="proof-bar__sub">Fibra extralarga peruano</div></div>
-  </div>
-  <div class="proof-bar__item">
-    <span class="proof-bar__icon">▢</span>
-    <div><div class="proof-bar__label">Refined Fit</div><div class="proof-bar__sub">Correcto en cualquier contexto</div></div>
-  </div>
-  <div class="proof-bar__item">
-    <img src="https://flagcdn.com/w40/co.png" alt="Colombia" loading="lazy" width="20" height="14" style="border-radius:2px;opacity:.7">
-    <div><div class="proof-bar__label">Hecho en Colombia</div><div class="proof-bar__sub">Producción local directa</div></div>
-  </div>
-  <div class="proof-bar__item">
-    <span class="proof-bar__icon">◆</span>
-    <div><div class="proof-bar__label">Bordado discreto</div><div class="proof-bar__sub">Sin logos visibles</div></div>
-  </div>
-  <div class="proof-bar__item">
-    <span class="proof-bar__icon">○</span>
-    <div><div class="proof-bar__label">180 g/m²</div><div class="proof-bar__sub">Peso y caída correcta</div></div>
-  </div>
-</div>
-
-<!-- COLECCIÓN -->
+<!-- 2. SECCIÓN DE PRODUCTO -->
 <section class="section collection" id="collection">
   <div class="collection__header">
     <p class="label reveal">Drop 01</p>
-    <h2 class="h2 reveal reveal-delay-1">Tres colores que funcionan<br>en cualquier ambiente.</h2>
-    <p class="reveal reveal-delay-2">Algodón pima peruano, 180 g/m². Refined fit. Bordado discreto. Cero logos visibles. Para repetir sin que se sienta repetido.</p>
+    <h2 class="h2 reveal reveal-delay-1">Empezamos por lo esencial</h2>
+    <p class="reveal reveal-delay-2">Blanco, negro y navy. Una selección inicial de colores fáciles de usar y repetir.</p>
   </div>
+
+  <!-- Proof bar dentro de la sección de producto -->
+  <div class="proof-bar reveal reveal-delay-2">
+    <div class="proof-bar__item">
+      <span class="proof-bar__icon">◎</span>
+      <div><div class="proof-bar__label">Tela fresca</div></div>
+    </div>
+    <div class="proof-bar__item">
+      <span class="proof-bar__icon">▢</span>
+      <div><div class="proof-bar__label">Cuello firme</div></div>
+    </div>
+    <div class="proof-bar__item">
+      <span class="proof-bar__icon">◆</span>
+      <div><div class="proof-bar__label">Buen largo</div></div>
+    </div>
+  </div>
+
   <div class="collection__grid">
 
     <div class="product-card reveal">
       <span class="product-card__badge">Drop 01</span>
       <div class="product-card__img-wrap">
-        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee Black — 8998" loading="lazy" width="600" height="900">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee Negro — 8998" loading="lazy" width="600" height="900">
         <div class="product-card__overlay"></div>
         <div class="product-card__cta"><span>Próximamente</span></div>
       </div>
       <div class="product-card__info">
         <div>
-          <p class="product-card__name">Essential Tee — Black</p>
-          <p class="product-card__detail">Pima 180g · Negro tinta</p>
+          <p class="product-card__name">Negro</p>
+          <p class="product-card__detail">El más fácil de usar.</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -329,14 +313,14 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
     <div class="product-card reveal reveal-delay-1">
       <span class="product-card__badge">Drop 01</span>
       <div class="product-card__img-wrap">
-        <img src="https://images.pexels.com/photos/5746087/pexels-photo-5746087.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee White — 8998" loading="lazy" width="600" height="900">
+        <img src="https://images.pexels.com/photos/5746087/pexels-photo-5746087.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Essential Tee Blanco — 8998" loading="lazy" width="600" height="900">
         <div class="product-card__overlay"></div>
         <div class="product-card__cta"><span>Próximamente</span></div>
       </div>
       <div class="product-card__info">
         <div>
-          <p class="product-card__name">Essential Tee — White</p>
-          <p class="product-card__detail">Pima 180g · Blanco óptico</p>
+          <p class="product-card__name">Blanco</p>
+          <p class="product-card__detail">El más limpio.</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -351,8 +335,8 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
       </div>
       <div class="product-card__info">
         <div>
-          <p class="product-card__name">Essential Tee — Navy</p>
-          <p class="product-card__detail">Pima 180g · Azul marino</p>
+          <p class="product-card__name">Navy</p>
+          <p class="product-card__detail">El más sobrio.</p>
         </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.35"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -363,72 +347,17 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
 
 <div class="divider"><div></div></div>
 
-<!-- LA IDEA -->
-<section id="philosophy">
-  <div class="philosophy">
-    <div class="philosophy__visual reveal">
-      <img src="https://images.pexels.com/photos/13795169/pexels-photo-13795169.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Colombia" loading="lazy" width="700" height="900">
-      <div class="philosophy__visual-overlay"></div>
-    </div>
-    <div class="philosophy__content">
-      <p class="label reveal">La Idea</p>
-      <h2 class="h2 reveal reveal-delay-1">Pertenecer al ambiente<br>sin tener que<br>performarlo</h2>
-      <p class="reveal reveal-delay-2">8998 no trata de impresionar. Trata de dejar que el hombre se sienta naturalmente en su lugar — sin sobre-esforzarse, sin quedar visualmente corto, sin tener que pensar dos veces en lo que lleva puesto.</p>
-      <p class="reveal reveal-delay-2">Un básico bien construido no llama la atención por las razones equivocadas. Lee bien. Repite bien. Funciona en la comida del domingo, en la reunión del lunes, en la salida del viernes.</p>
-      <p class="philosophy__quote reveal reveal-delay-3">Que se note. Sin que nadie<br>sepa exactamente qué notó.</p>
-      <div class="philosophy__origin reveal reveal-delay-3">
-        <img src="https://flagcdn.com/w80/co.png" alt="Colombia" loading="lazy" width="36" height="24" style="border-radius:2px">
-        <div class="philosophy__origin-text">
-          <strong>Hecho en Colombia</strong>
-          Producción local · Control de calidad directo · Sin intermediarios
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div></div></div>
-
-<!-- MATERIALES -->
-<section class="materials" id="materials">
-  <img class="materials__img" src="https://images.pexels.com/photos/4814074/pexels-photo-4814074.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Algodón Pima — textura de tela" loading="lazy" width="1600" height="600">
-  <div class="materials__overlay"></div>
-  <div class="materials__content">
-    <p class="label reveal" style="margin-bottom:1.2rem">El Producto</p>
-    <h2 class="materials__title reveal reveal-delay-1">Lo que hace la diferencia<br>no se anuncia. Se siente.</h2>
-    <div class="materials__grid">
-      <div class="materials__item reveal reveal-delay-1">
-        <div class="materials__item-icon">◎</div>
-        <h3 class="materials__item-title">Algodón Pima Peruano</h3>
-        <p class="materials__item-text">Fibra extralarga de 180 g/m². Suave al tacto desde el primer uso. Resistente al desgaste y al lavado. La misma fibra que usan marcas que cobran tres veces más.</p>
-      </div>
-      <div class="materials__item reveal reveal-delay-2">
-        <div class="materials__item-icon">▢</div>
-        <h3 class="materials__item-title">Refined Fit</h3>
-        <p class="materials__item-text">Ni ajustado ni holgado. Un fit pensado para leer bien en comida, reunión de trabajo, salida de noche o domingo casual. Correcto en cualquier contexto sin pensar en ello.</p>
-      </div>
-      <div class="materials__item reveal reveal-delay-3">
-        <div class="materials__item-icon">◆</div>
-        <h3 class="materials__item-title">Construcción</h3>
-        <p class="materials__item-text">Costuras reforzadas, cuello sin deformación. Bordado discreto sin logos visibles en el frente. Cada pieza revisada antes de salir. Producción local con control directo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div></div></div>
-
-<!-- ACCESO -->
+<!-- 3. CTA PRINCIPAL -->
 <section class="access" id="access">
   <p class="access__eyebrow reveal">Drop 01</p>
-  <h2 class="access__title reveal reveal-delay-1">Acceso prioritario<br>antes del lanzamiento</h2>
-  <p class="access__sub reveal reveal-delay-2">Sé el primero en conocer la fecha, los colores y los detalles del Drop 01. Acceso antes que nadie — sin spam, sin ruido.</p>
+  <h2 class="access__title reveal reveal-delay-1">Acceso prioritario al Drop 01</h2>
+  <p class="access__sub reveal reveal-delay-2">Entra primero al Drop 01.</p>
   <form class="access__form reveal reveal-delay-3" id="notify-form" action="https://formsubmit.co/hola@8998.co" method="POST">
     <input type="hidden" name="_subject" value="8998 — Nuevo acceso prioritario">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="box">
     <input type="email" name="email" class="access__input" placeholder="tu@correo.com" aria-label="Email" id="notify-input" required>
-    <button type="submit" class="access__btn">Quiero acceso</button>
+    <button type="submit" class="access__btn">Quiero acceso prioritario</button>
   </form>
   <p class="access__msg" id="notify-msg">Listo. Serás el primero en saberlo.</p>
   <div class="access__social reveal">
@@ -440,19 +369,71 @@ footer{border-top:1px solid var(--border);padding:5rem 2.5rem 3rem}
   </div>
 </section>
 
+<div class="divider"><div></div></div>
+
+<!-- 4. BLOQUE DE USO REAL -->
+<section class="use-real" id="uso-real">
+  <div class="use-real__left reveal">
+    <h2 class="h2">Por qué vuelves a esta camiseta</h2>
+    <p style="margin-top:1.8rem">No es la camiseta que guardas para una ocasión especial. Es la que usas seguido porque funciona en el día a día y también cuando el plan se eleva.</p>
+  </div>
+  <ul class="use-real__list reveal reveal-delay-1">
+    <li>
+      <strong>Tela</strong>
+      Fresca, suave y cómoda desde el primer uso.
+    </li>
+    <li>
+      <strong>Cuello</strong>
+      Firme y bien hecho, para que se mantenga bien puesto.
+    </li>
+    <li>
+      <strong>Largo</strong>
+      Pensado para caer bien con lo que ya usas.
+    </li>
+    <li>
+      <strong>Manga y hombro</strong>
+      Queda bien en el cuerpo sin verse ni apretada ni suelta.
+    </li>
+  </ul>
+</section>
+
+<div class="divider"><div></div></div>
+
+<!-- 5. BLOQUE DE IDEA -->
+<section class="idea-block" id="idea">
+  <h2 class="h2 reveal">Una buena camiseta no necesita hacer demasiado.</h2>
+  <p class="reveal reveal-delay-1" style="margin-top:2rem">8998 nace de una idea simple: una buena camiseta debería verse bien, sentirse bien y usarse más de una vez. Sin exceso, sin logos que estorben y sin hacer demasiado para quedar bien.</p>
+</section>
+
+<div class="divider"><div></div></div>
+
+<!-- 6. BLOQUE DE CONFIANZA -->
+<section class="trust-block" id="confianza">
+  <div class="trust-block__left reveal">
+    <h2 class="h2">Hecha con intención desde Colombia</h2>
+    <p style="margin-top:1.8rem">8998 empieza con pocas referencias y una idea clara: hacer bien lo que más se usa. Cada camiseta está pensada para usarse mucho, verse bien puesta y mantener la forma con el tiempo.</p>
+  </div>
+  <div class="trust-mini reveal reveal-delay-1">
+    <div class="trust-mini__item"><span>Primera tanda</span></div>
+    <div class="trust-mini__item"><span>Hecho en Colombia</span></div>
+    <div class="trust-mini__item"><span>Producción cuidada</span></div>
+    <div class="trust-mini__item"><span>Pocas referencias, bien hechas</span></div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer__inner">
     <div class="footer__top">
       <div>
         <div class="footer__brand-name">8998</div>
-        <p class="footer__brand-sub">Premium Essentials · Colombia<br><br>La marca de los que prefieren<br>la elegancia sin ruido.</p>
+        <p class="footer__brand-sub">Básicos bien hechos · Colombia<br><br>Una camiseta que funciona<br>y se usa seguido.</p>
       </div>
       <div class="footer__col">
         <h4>Marca</h4>
         <a href="#collection">Drop 01</a>
-        <a href="#philosophy">La Idea</a>
-        <a href="#materials">El Producto</a>
+        <a href="#idea">La Idea</a>
+        <a href="#confianza">Colombia</a>
         <a href="#access">Acceso</a>
       </div>
       <div class="footer__col">
