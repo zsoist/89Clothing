@@ -1,37 +1,39 @@
-# 89clothing
+# 8998 — Product Specification
 
-<!-- KYUBY:GENERATED START -->
-## Operator Goal
-Resume and execute approved production deployment to Vercel at 89clothing.vercel.app
+## Problem
+Colombian men lack access to high-quality, well-fitting basic t-shirts at a fair price. Most options are either cheap fast-fashion (poor fit, degrades quickly) or overpriced imported brands.
 
-## Audience
-Production users of 89Clothing e-commerce platform
+## Solution
+8998 offers essential t-shirts made in Colombia with:
+- 180gsm combed cotton (fresh for tropical climate)
+- Reinforced double-stitch collar (doesn't deform)
+- Considered body-fit (not boxy, not tight)
+- 3 essential colors: Negro, Blanco, Navy
+- $89,900 COP (~$22 USD) — accessible premium
 
-## Constraints
-- Resume from paused deployment state
-- Target Vercel production environment
-- Domain: 89clothing.vercel.app
-- Requires approval verification
+## Target User
+Colombian men 22-40 who care about how they look but don't follow fashion trends. They want basics that work every day — for work, social, casual.
 
-## Stack
-['vercel', 'node.js', 'next.js']
+## Business Model
+- Direct-to-consumer (no retail markup)
+- Drop model (limited production runs → urgency)
+- Email-first launch (priority access list)
+- Instagram as primary brand channel (@8998.co)
+- WhatsApp for customer support
 
-## Architecture Sketch
-- Vercel serverless deployment
-- Production environment with custom domain
+## Success Criteria
+- [x] ✅ Landing page live with email capture
+- [x] ✅ 3 product variants displayed with pricing
+- [x] ✅ Mobile-first responsive design
+- [x] ✅ Countdown timer to Drop 01
+- [x] ✅ Size guide with measurements
+- [x] ✅ FAQ section
+- [ ] Real WhatsApp number connected
+- [ ] Legal pages (terms, privacy, shipping, returns)
+- [ ] Payment integration (when Drop 01 launches)
+- [ ] Real product photography (replace stock photos)
+- [ ] Video content
 
-## Acceptance Criteria
-- Deployment completes successfully to Vercel
-- 89clothing.vercel.app responds with 200 status
-- Production environment is live and accessible
-
-## Hidden Holdouts
-- vercel:89clothing-prod-deployment-status
-- vercel:89clothing-domain-health-check
-
-## Deployment Target
-vercel_preview
-
-## Risk Class
-high
-<!-- KYUBY:GENERATED END -->
+## Architecture
+Single HTML file, zero dependencies. Deployed as static site on Vercel.
+No backend needed until payment integration (Drop 01 launch).
