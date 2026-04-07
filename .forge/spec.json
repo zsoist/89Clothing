@@ -1,0 +1,32 @@
+{
+  "project_name": "89clothing",
+  "goal": "Resume and execute approved production deployment to Vercel at 89clothing.vercel.app",
+  "audience": "Production users of 89Clothing e-commerce platform",
+  "constraints": [
+    "Resume from paused deployment state",
+    "Target Vercel production environment",
+    "Domain: 89clothing.vercel.app",
+    "Requires approval verification"
+  ],
+  "stack": "['vercel', 'node.js', 'next.js']",
+  "architecture": [
+    "Vercel serverless deployment",
+    "Production environment with custom domain"
+  ],
+  "acceptance_tests": [
+    "Deployment completes successfully to Vercel",
+    "89clothing.vercel.app responds with 200 status",
+    "Production environment is live and accessible"
+  ],
+  "hidden_holdout_refs": [
+    "vercel:89clothing-prod-deployment-status",
+    "vercel:89clothing-domain-health-check"
+  ],
+  "deploy_target": "vercel_preview",
+  "risk_class": "high",
+  "summary": "Resume paused production deployment of 89Clothing to Vercel production environment at 89clothing.vercel.app following operator approval via Telegram",
+  "workflow_type": "deploy",
+  "language": "en",
+  "operator_identity": "telegram:unknown",
+  "target_scope": "project"
+}

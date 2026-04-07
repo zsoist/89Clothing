@@ -1,0 +1,34 @@
+{
+  "project": "89Clothing",
+  "eval_score": null,
+  "eval_status": null,
+  "review_score": 58,
+  "critical_findings": 2,
+  "critical_issues": [
+    {
+      "severity": "high",
+      "file": "index.html",
+      "description": "Both email capture flows are functionally broken: the main signup handler always prevents submission and the exit popup only shows a toast, so users think they subscribed when nothing is actually stored. Submit to a real backend or the configured form endpoint, and only show success after the request completes with visible error handling on failure."
+    },
+    {
+      "severity": "high",
+      "file": "index.html",
+      "description": "The page loads 25 third-party images without srcset, sizes, or picture sources, so small screens can still fetch oversized Unsplash and Pexels assets across a very long landing page. Generate responsive image variants, add srcset and sizes, avoid preloading desktop-sized media on mobile, and consider self-hosting optimized images."
+    }
+  ],
+  "preview_allowed": false,
+  "preview_url": null,
+  "runtime_smoke": {
+    "ok": false,
+    "status_code": null,
+    "detail": "missing_url"
+  },
+  "approval_required": true,
+  "production_allowed": false,
+  "generated_at": "2026-04-05T07:30:15.942623+00:00",
+  "reasons": [
+    "review_score_below_threshold:58",
+    "critical_review_findings:2",
+    "deploy_unavailable"
+  ]
+}

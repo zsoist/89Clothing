@@ -1,0 +1,62 @@
+{
+  "project": "89Clothing",
+  "score": 58,
+  "issues": [
+    {
+      "severity": "high",
+      "file": "index.html",
+      "description": "Both email capture flows are functionally broken: the main signup handler always prevents submission and the exit popup only shows a toast, so users think they subscribed when nothing is actually stored. Submit to a real backend or the configured form endpoint, and only show success after the request completes with visible error handling on failure."
+    },
+    {
+      "severity": "high",
+      "file": "index.html",
+      "description": "The page loads 25 third-party images without srcset, sizes, or picture sources, so small screens can still fetch oversized Unsplash and Pexels assets across a very long landing page. Generate responsive image variants, add srcset and sizes, avoid preloading desktop-sized media on mobile, and consider self-hosting optimized images."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "The email form exposes a raw FormSubmit inbox endpoint and explicitly disables captcha, which makes the mailbox easy to spam if JavaScript is disabled or the endpoint is hit directly. Route submissions through a serverless handler and add captcha or rate limiting instead of publishing a direct inbox URL."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "The quick-view modal, size-guide modal, exit popup, and mobile menu behave like dialogs but do not implement full dialog accessibility with aria-modal, labels, focus trapping, and focus restoration. Use accessible dialog patterns so keyboard and screen-reader users cannot tab behind overlays and always return focus to the trigger on close."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "Several interactive controls are not properly accessible: color swatches are clickable span elements, the video teaser is a click-only div, and the modal gallery dots have no accessible names or working handlers. Replace these with real buttons, add labels and state attributes, and support Enter and Space activation."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "The muted text token is too low contrast on the dark background, about 2.18 to 1 in the current palette, and it is used for real content such as captions and secondary labels. Raise secondary text contrast to at least WCAG AA levels or reserve the low-contrast token for decorative content only."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "Core product actions are hidden behind hover states and several controls are only 32px to 36px, so touch users lose quick-view, share, and favorite affordances and smaller buttons miss recommended touch-target sizing. Make important actions visible on coarse-pointer layouts and keep tappable controls at least 44px."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "The page attaches multiple independent scroll listeners that read layout and write styles for nav state, progress, parallax, sticky CTA, and active section tracking on every scroll event. Consolidate this work into one requestAnimationFrame-driven loop or more IntersectionObserver usage to reduce jank on lower-end mobile devices."
+    },
+    {
+      "severity": "medium",
+      "file": "index.html",
+      "description": "The countdown is based on the current date plus 30 days on every page load, so the launch date keeps moving forever instead of representing a real drop date. Store a fixed launch timestamp in configuration and render the timer from that single source of truth."
+    },
+    {
+      "severity": "low",
+      "file": "index.html",
+      "description": "One footer link opens in a new tab without noopener protection, and the share helpers use window.open without noopener or noreferrer features. Add rel=\"noopener noreferrer\" to every external target blank link and open shared URLs with explicit noopener protection."
+    },
+    {
+      "severity": "low",
+      "file": "index.html",
+      "description": "Storage and clipboard APIs are used without defensive error handling, so malformed localStorage data, blocked sessionStorage, or denied clipboard permissions can throw and stop later scripts from running. Wrap these calls in try catch blocks, validate parsed data, and provide fallbacks when the browser blocks the API."
+    }
+  ],
+  "summary": "This is a polished single-file landing page, but it is not launch-ready because signup capture is fake, media delivery is heavy, and several dialog, accessibility, and touch interaction basics are still missing."
+}
