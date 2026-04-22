@@ -8,8 +8,8 @@ Colombian men lack access to high-quality, well-fitting basic t-shirts at a fair
 - 180gsm combed cotton (fresh for tropical climate)
 - Reinforced double-stitch collar (doesn't deform)
 - Considered body-fit (not boxy, not tight)
-- 3 essential colors: Negro, Blanco, Navy
-- $89,900 COP (~$22 USD) — accessible premium
+- **4 colors** (v2): Negro, Blanco, Navy, Oliva seco
+- $89,900 COP (~$22 USD) — precio acorde a lo que entrega
 
 ## Target User
 Colombian men 22-40 who care about how they look but don't follow fashion trends. They want basics that work every day — for work, social, casual.
@@ -23,16 +23,18 @@ Colombian men 22-40 who care about how they look but don't follow fashion trends
 
 ## Success Criteria
 - [x] ✅ Landing page live with email capture
-- [x] ✅ 3 product variants displayed with pricing
+- [x] ✅ 4 product variants displayed with pricing (v2 adds Oliva seco)
 - [x] ✅ Mobile-first responsive design
-- [x] ✅ Countdown timer to Drop 01
 - [x] ✅ Size guide with measurements
 - [x] ✅ FAQ section
+- [x] ✅ Bundles section (4 bundles)
+- [x] ✅ Comparison table (8998 vs básica promedio)
+- [x] ✅ Commercial v2 redesign (light palette, 8 sections, per Eduardo brief Apr 21)
 - [ ] Real WhatsApp number connected
 - [ ] Legal pages (terms, privacy, shipping, returns)
 - [ ] Payment integration (when Drop 01 launches)
 - [ ] Real product photography (replace stock photos)
-- [ ] Video content
+- [ ] Video content (Drop 01 launch)
 
 ## Architecture
 Single HTML file, zero dependencies. Deployed as static site on Vercel.

@@ -16,8 +16,15 @@ Premium Colombian t-shirt brand landing page. Pre-launch e-commerce with email c
 - **GitHub**: zsoist/89Clothing (branch: claude/create-web-page-structure-Q4lds)
 - **Vercel project**: 89clothing (prj_W47hWdlnkuExVb5U17AhHgZUZOfM)
 
-## Key Sections (25 sections, single page)
-Hero → Products (Negro/Blanco/Navy, $89.900 COP) → La Idea → Video (coming soon) → Fabric Details → Real Usage → Color Stories → Care → Process → Colombia Trust → Timeline → Founder → Lookbook → Testimonials → Comparison → Values → Guarantee → FAQ → BTS → Packaging → Press (empty) → Instagram → Priority Access (email form) → Referral → Colombia Map
+## Sections v2 (8 sections — Apr 22 2026 redesign per Eduardo brief)
+1. Hero (split layout, light bg, 2 CTAs)
+2. Drop 01 / Producto (4 product cards: Negro, Blanco, Navy, Oliva seco)
+3. Bundles (4 bundles with color dots)
+4. Por qué la repites (3 reason cards)
+5. Comparativa (table: 8998 vs básica promedio, 8 attributes)
+6. Acceso anticipado (email capture with 3 benefits, FormSubmit.co)
+7. Confianza operativa (4-item horizontal bar)
+8. FAQ (accordion, 3 questions)
 
 ## Interactive Elements
 - Countdown timer (fixed: May 1, 2026)
@@ -43,6 +50,16 @@ git config user.name "zsoist"
 git config user.email "zsoist@users.noreply.github.com"
 ```
 Branch: `claude/create-web-page-structure-Q4lds` (not main!)
+
+## Design Direction (v2 — Apr 22 2026)
+- Palette: light warm (hueso #f5f0e8, bg2 #ede8de, text #1a1a1a, accent navy #1a2744, oliva #6b6b3f)
+- **Oliva used ONLY for product card color swatch and bundle dot — NOT as UI decoration**
+- Mobile-first. Every section resolves at 390px. Quick view always visible on touch (no hover-only)
+- Typography: Outfit primary everywhere. Cormorant only for hero H1.
+- NO: cursor dot, parallax, counters, social ticker, manifesto, editorial sections
+- YES: scroll progress, nav scroll, hamburger, FAQ accordion, email form, quick view modal, size guide, exit popup, cookie, sticky mobile CTA, back-to-top, WhatsApp float
+- Copy is FINAL per Eduardo brief Apr 21 — do not change framing or wording without explicit approval
+- "Una buena camiseta debería resolver más de una vez." — central thesis, do NOT change
 
 ## Pitfalls
 - WhatsApp number is placeholder (`wa.me/message/8998CO`) — needs real number (TODO in code)
