@@ -751,6 +751,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 1.5
       <input type="hidden" name="_subject" value="8998 — Acceso anticipado Drop 01">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="box">
+      <!-- Honeypot: bots autofill this; real users leave it empty. FormSubmit silently discards on fill. -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <input type="email" name="email" class="access__input" placeholder="tu@correo.com" aria-label="Correo electrónico" id="notify-input" required>
       <button type="submit" class="access__btn" id="notify-btn">Quiero acceso anticipado</button>
     </form>
@@ -928,6 +930,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 1.5
     <form class="exit-popup__form" id="exitForm" action="https://formsubmit.co/hola@8998.co" method="POST">
       <input type="hidden" name="_subject" value="8998 — Acceso anticipado (exit popup)">
       <input type="hidden" name="_captcha" value="false">
+      <!-- Honeypot: bots autofill this; real users leave it empty. FormSubmit silently discards on fill. -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <input type="email" name="email" class="exit-popup__input" placeholder="tu@correo.com" required>
       <button type="submit" class="exit-popup__btn">Entrar</button>
     </form>
@@ -1175,7 +1179,13 @@ exitSkip  && exitSkip.addEventListener('click', closeExitPopup);
 exitPopup && exitPopup.addEventListener('click', function(e){ if(e.target===exitPopup) closeExitPopup(); });
 exitForm  && exitForm.addEventListener('submit', function(e){
   e.preventDefault();
-  showToast('✓ Registrado correctamente');
+  // Actually POST to FormSubmit.co so captured emails reach hola@8998.co.
+  // Same pattern as notify-form above. Fire-and-forget: we optimistically
+  // show success + close the popup, but the network call still runs.
+  const fd = new FormData(exitForm);
+  fetch(exitForm.action, {method:'POST',body:fd,headers:{'Accept':'application/json'}})
+    .then(function(){ showToast('✓ Registrado correctamente'); })
+    .catch(function(){ showToast('Hmm, algo falló. Escríbenos a hola@8998.co'); });
   closeExitPopup();
 });
 

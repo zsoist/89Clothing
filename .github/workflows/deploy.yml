@@ -25,10 +25,25 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Stage only public assets into _site/ so we never ship .claude/, .forge/,
+      # .github/, or other repo metadata to GitHub Pages. Explicit allowlist.
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          # Copy additional public assets if they exist (robots, sitemap, favicon, img/, assets/…).
+          for f in robots.txt sitemap.xml favicon.ico favicon.svg manifest.json; do
+            [ -f "$f" ] && cp "$f" _site/ || true
+          done
+          for d in img images assets public static; do
+            [ -d "$d" ] && cp -R "$d" _site/ || true
+          done
+          echo "--- Staged artifact contents ---"
+          ls -la _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
